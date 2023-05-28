@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Document</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>FineX - Gráficos Teste</title>
 </head>
 <body>
 @auth
