@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [userController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
+Route::get('/chart', function () {
+    return view('chart');
+});

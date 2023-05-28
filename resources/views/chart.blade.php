@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+@auth
+<div style="width: 800px;">
+  <canvas id="balanceMonths"></canvas>
+</div>
+
+<div style="width: 800px; height: 600px;">
+  <canvas id="categoryResume"></canvas>
+</div>
+@endauth
+<script>
+    const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Saldo',
+      data: [12, 22, 1, 5, 7, 13],
+      borderColor: 'rgba(0, 220, 0, 0.3)',
+      backgroundColor: 'rgba(0, 220, 0, 0.2)',
+      fill: false,
+      tension: 0.2
+    },
+    {
+      label: 'Gasto',
+      data: [12, 19, 3, 5, 2, 3],
+      borderColor: 'rgba(255, 0, 0, 0.3)',
+      backgroundColor: 'rgba(255, 0, 0, 0.2)',
+      fill: false,
+      tension: 0.2
+    }]
+    };
+
+   const config = {
+    type: 'line',
+    data: data,
+    };
+
+    var myChart = new Chart(
+        document.getElementById('balanceMonths'),
+        config
+    );
+
+    // divisão graficos //
+    const labelsCategory = ['TV / Internet / Telefone ', 'Moradia', 'Supermercado', 'Bares e restaurantes / Delivery', 'Lazer', 'Transporte', 'Saúde e beleza', 'Contas Fixas'];
+    const dataCategory = {
+    labels: labelsCategory,
+    datasets: [{
+        label: 'Gastos por Categorias',
+        data: [300, 50, 100,300, 50, 100,300, 50],
+        backgroundColor: [
+        'rgb(30,144,255)',
+        'rgb(220,20,60)',
+        'rgb(128,0,128)',
+        'rgb(255,140,0)',
+        'rgb(0,128,128)',
+        'rgb(34,139,34)',
+        'rgb(139,69,19)',
+        'rgb(255,255,0)',
+        ],
+        hoverOffset: 4
+    }]
+    };
+
+    const configCategory = {
+    type: 'doughnut',
+    data: dataCategory,
+    };
+
+    var myChart = new Chart(
+        document.getElementById('categoryResume'),
+        configCategory 
+    );
+</script>
+ 
+
+ 
+</body>
+</html>
