@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     use HasFactory;
-    public $timestamps = false;
     public function User(){
         return $this->hasOne('App\Models\User');
     }

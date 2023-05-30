@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->float('value');
-            $table->date('date');
+            $table->timestamps();
             $table->string('Description');
             $table->foreignId('user_id');
         });

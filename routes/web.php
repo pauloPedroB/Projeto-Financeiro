@@ -19,6 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [userController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+Route::post('/registrar', [userController::class, 'store'])->name('registrar');
+Route::get('/positive', [userController::class, 'positive'])->name('saldo')->middleware('auth');
+Route::get('/negative', [userController::class, 'negative'])->name('saldo')->middleware('auth');
+
+
+
 
 Route::get('/chart', function () {
     return view('chart');
