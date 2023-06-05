@@ -18,7 +18,16 @@ use DateTime;
 
 class ChartController extends Controller
 {
+    public function saldo(Request $request){
+        $user = auth()->user();
+        $saldo = [2,12,4,10,21,7,15];
 
+        return view('chart', [
+            'user' => $user,
+            'balance' => $user->balance,
+            'saldo' => $saldo,
+        ]);
+    }
 
 
     /**

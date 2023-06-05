@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\paymentController;
+use App\Http\Controllers\ChartController;
 
 
 /*
@@ -25,10 +26,4 @@ Route::post('/registrar', [userController::class, 'store'])->name('registrar');
 Route::get('/positive', [paymentController::class, 'positive'])->name('postive')->middleware('auth');
 Route::get('/negative', [paymentController::class, 'negative'])->name('negative')->middleware('auth');
 Route::post('/balance', [userController::class, 'balance'])->name('balance');
-
-
-
-
-Route::get('/chart', function () {
-    return view('chart');
-});
+Route::get('/chart', [ChartController::class, 'saldo'])->name('saldo');
