@@ -22,8 +22,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [userController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 Route::post('/registrar', [userController::class, 'store'])->name('registrar');
-Route::get('/positive', [paymentController::class, 'positive'])->name('saldo')->middleware('auth');
-Route::get('/negative', [paymentController::class, 'negative'])->name('saldo')->middleware('auth');
+Route::get('/positive', [paymentController::class, 'positive'])->name('postive')->middleware('auth');
+Route::get('/negative', [paymentController::class, 'negative'])->name('negative')->middleware('auth');
+Route::post('/balance', [userController::class, 'balance'])->name('balance');
 
 
 

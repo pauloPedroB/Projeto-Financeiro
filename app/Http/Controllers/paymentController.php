@@ -14,7 +14,6 @@ class paymentController extends Controller
 
             $payment = new Payment;
 
-            $payment ->snapshot = false;
             $payment->value = $request->value;
             $payment->created_at = $request->date;
             $payment->Description = 'a';
@@ -27,7 +26,6 @@ class paymentController extends Controller
         $user->save();
 
         $payment = new Payment;
-        $payment ->snapshot = true;
 
         $payment->value = $request->value;
         $payment->created_at = new Datetime();

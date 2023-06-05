@@ -11,7 +11,7 @@
     <h1>{{$user->name}}</h1>
     <h3>Saldo: {{$balance}}</h3>
     @if(session('rn'))
-        <form method="POST" action="/saldo">
+        <form method="POST" action="/registrar">
             <h2>Registrar seu saldo bancário atual</h2>
             <label for="Valor">Saldo</label>
             <input type="number" name="value">
@@ -50,8 +50,14 @@
         <input type="submit">
     </form>
 
-    <div>
-        <h1></h1>
-    </div>
+    <form action="/balance" method="POST">
+        @csrf
+        <h2>Consultar saldo no dia:</h2>
+        <label for="Data">Data</label>
+        <input type="date" name="date" required>
+        <input type="submit">
+    </form>
+
+    <p>{{$saldo}}</p>
 </body>
 </html>

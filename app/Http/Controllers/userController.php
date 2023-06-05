@@ -59,7 +59,23 @@ class userController extends Controller
     public function dashboard(){
         $user = auth()->user();
         
-        return view('dashboard',['user'=>$user,'balance'=>$user->balance]);
+        return view('dashboard',['user'=>$user,'balance'=>$user->balance,'saldo'=>0]);
     }
+    public function balance(Request $request){
+        $user = auth()->user();
+        $payments = Payment::where('user_id', '=', $user->id)
+                        ->where('created_at', '<=', $request->date)
+                        ->where('created_at','>',new DateTime())
+                        ->sum('value');
+        
+        $value = $user->balance + $payments;
+    
+        return view('dashboard', [
+            'user' => $user,
+            'balance' => $user->balance,
+            'saldo' => $value
+        ]);
+    }
+    
     
 }
