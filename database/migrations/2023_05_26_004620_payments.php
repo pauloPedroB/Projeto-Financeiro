@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->float('value');
             $table->timestamps();
+            $table->boolean('snapshot');
             $table->string('Description');
             $table->foreignId('user_id');
         });
