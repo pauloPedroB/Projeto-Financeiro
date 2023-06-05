@@ -43,7 +43,6 @@ class paymentController extends Controller
         $user = auth()->user();
         if($request->date){
             $payment = new Payment;
-            $payment ->snapshot = false;
 
             $payment->value = -$request->value;
             $payment->created_at = $request->date;
