@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <title>FineX - Gráficos Teste</title>
+    <title>Ctrol - Gráficos Teste</title>
 </head>
 <body>
 @auth
+{{$user->balance}}
 <div style="width: 800px;">
   <canvas id="balanceMonths"></canvas>
 </div>
@@ -24,7 +25,7 @@
     labels: labels,
     datasets: [{
       label: 'Saldo',
-      data: [12, 22, 1, 5, 7, 13],
+      data: JSON.parse('<?php $balance; ?>'),
       borderColor: 'rgba(0, 220, 0, 0.3)',
       backgroundColor: 'rgba(0, 220, 0, 0.2)',
       fill: false,
@@ -32,7 +33,7 @@
     },
     {
       label: 'Gasto',
-      data: [12, 19, 3, 5, 2, 3],
+      data: JSON.parse('<?php $debt ?>'),
       borderColor: 'rgba(255, 0, 0, 0.3)',
       backgroundColor: 'rgba(255, 0, 0, 0.2)',
       fill: false,
@@ -56,7 +57,7 @@
     labels: labelsCategory,
     datasets: [{
         label: 'Gastos por Categorias',
-        data: [300, 50, 100,300, 50, 100,300, 50],
+        data: JSON.parse('<?php $categories ?>'),
         backgroundColor: [
         'rgb(30,144,255)',
         'rgb(220,20,60)',
@@ -72,7 +73,7 @@
     };
 
     const configCategory = {
-    type: 'doughnut',
+    type: 'bars',
     data: dataCategory,
     };
 
