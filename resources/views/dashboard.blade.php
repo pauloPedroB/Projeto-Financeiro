@@ -31,7 +31,7 @@
         <input type="number" name="value" required>
         <input type="submit">
     </form>
-    <form>
+    <form action="/positive">
         <h2>Registrar boleto a receber</h2>
         <label for="Valor">Valor</label>
         <input type="number" name="value" required>
@@ -40,7 +40,7 @@
         <input type="date" name="date" required>
         <input type="submit">
     </form>
-    <form>
+    <form action="/negative">
         <h2>Registrar transferência a pagar</h2>
         <label for="Valor">Valor</label>
         <input type="number" name="value" required>

@@ -59,7 +59,6 @@ class paymentController extends Controller
 
         $payment = new Payment;
         
-        $payment ->snapshot = true;
 
         $payment->value = -$request->value;
         $payment->created_at = new Datetime();
