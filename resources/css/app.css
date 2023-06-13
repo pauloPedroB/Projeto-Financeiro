@@ -5,3 +5,13 @@
 [x-cloak] {
     display: none;
 }
+
+@layer components {
+    .sidebar{
+      transition:all .4s ease-in-out;
+    }
+
+    .sidebar{
+      transition:all .4s ease-in-out;
+    }
+  }

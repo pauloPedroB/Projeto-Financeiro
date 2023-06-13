@@ -8,99 +8,81 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <title>Ctrol - Gráficos Teste</title>
 
+    @vite('resources/css/app.css')
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   </head>
-<body>
+<body class="bg-neutral-500/25">
 @auth
-
-<div class="container-fluid text-white">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <img src="/images/ctrol - white - logo.png" alt="Logo Ctrol na cor branca!" class="bg-transparent img-fluid fs-5 d-none d-sm-inline">
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
-                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 2 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap text-white"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
-                </div>
-            </div>
+<section>
+  <div class="sidebar bg-neutral-700 mt-[20vh] lg:ml-24 h-[60vh] w-[3.20rem] overflow-hidden rounded-2xl hover:w-56 hover:bg-neutral-700 hover:shadow-2xl">
+    <div class="flex h-screen flex-col justify-between pt-2 pb-6">
+      <div>
+        <div class="w-max p-2.5">
+          <img src="/images/ctrol - white - logo.png" class="w-24 -ml-5" alt="">
         </div>
-        <div class="col py-3">
-          @json($saldo)
-          <div style="width: 800px;">
-            <canvas id="balanceMonths"></canvas>
-          </div>
-
-          <div style="width: 800px; height: 600px;">
-            <canvas id="categoryResume"></canvas>
-          </div>
-        </div>
+        <ul class="mt-6 space-y-2 tracking-wide">
+          <li class="min-w-max">
+            <a href="#" aria-label="dashboard" class="relative flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg class="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
+                <path d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z" class="fill-current text-white dark:fill-slate-100"></path>
+                <path d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z" class="fill-current text-yellow-200 group-hover:text-yellow-300"></path>
+                <path d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z" class="fill-current group-hover:text-yellow-300"></path>
+              </svg>
+              <span class="-mr-1 font-bold">Dashboard</span>
+            </a>
+          </li>
+          <li class="min-w-max">
+            <a href="#" class="bg group flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path class="fill-current text-yellow-300 group-hover:text-yellow-300" fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd" />
+                <path class="fill-current text-gray-100 group-hover:text-yellow-100" d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z" />
+              </svg>
+              <span class="group-hover:text-gray-200 font-bold">Categories</span>
+            </a>
+          </li>
+          <li class="min-w-max">
+            <a href="#" class="group flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path class="fill-current text-yellow-300 group-hover:text-yellow-300" fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" />
+                <path class="fill-current text-gray-100 group-hover:text-yellow-100" d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+              </svg>
+              <span class="group-hover:text-gray-200 font-bold">Reports</span>
+            </a>
+          </li>
+          <li class="min-w-max">
+            <a href="#" class="group flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path class="fill-current text-yellow-300 group-hover:text-yellow-300" d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+                <path class="fill-current text-gray-100 group-hover:text-yellow-100" d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+              </svg>
+              <span class="group-hover:text-gray-200 font-bold">Other data</span>
+            </a>
+          </li>
+          <li class="min-w-max">
+            <a href="#" class="group flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path class="fill-current text-yellow-300 group-hover:text-yellow-300" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                <path class="fill-current text-gray-100 group-hover:text-yellow-100" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+              </svg>
+              <span class="group-hover:text-gray-200 font-bold">Finance</span>
+            </a>
+          </li>
+          <li class="min-w-max">
+            <a href="#" class="group flex items-center space-x-4 hover:bg-gradient-to-r from-yellow-900 to-yellow-200 px-4 py-3 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 group-hover:fill-yellow-100" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+              </svg>
+              <span class="group-hover:text-gray-200 font-bold">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
+    <div class="text-white">
+    {{ $user->name }}
+    </div>
+  </div>
+</section>
 @endauth
 <script>
     const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
@@ -165,8 +147,5 @@
         configCategory 
     );
 </script>
- 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
