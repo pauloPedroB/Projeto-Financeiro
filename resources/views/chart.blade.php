@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <title>Ctrol - Gráficos Teste</title>
 
     @vite('resources/css/app.css')
     <!-- bootstrap -->
   </head>
+<?php $balance =  $user->balance ?>
 <body class="bg-neutral-500/25">
 @auth
 <section>
-  <div class="sidebar bg-neutral-700 mt-[20vh] lg:ml-24 h-[60vh] w-[3.20rem] overflow-hidden rounded-2xl hover:w-56 hover:bg-neutral-700 hover:shadow-2xl">
+  <div class="sidebar absolute bg-neutral-700 mt-[20vh] lg:ml-24 h-[60vh] w-[3.20rem] overflow-hidden rounded-2xl hover:w-56 hover:bg-neutral-700 hover:shadow-2xl">
     <div class="flex h-screen flex-col justify-between pt-2 pb-6">
       <div>
         <div class="w-max p-2.5">
@@ -78,74 +82,37 @@
         </ul>
       </div>
     </div>
-    <div class="text-white">
-    {{ $user->name }}
-    </div>
   </div>
 </section>
+<div class="absolute ml-72 mt-72" style="height:30vh; width:85vh;">
+    <canvas id="balanceGrafico" data-balance="{{ $user->balance }}" ></canvas>
+</div>
 @endauth
 <script>
-    const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-    const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Saldo',
-      data: [2,122,4,10,21,7,25],
-      borderColor: 'rgba(0, 220, 0, 0.3)',
-      backgroundColor: 'rgba(0, 220, 0, 0.2)',
-      fill: false,
-      tension: 0.2
-    },
-    {
-      label: 'Gasto',
-      data: [2,12,4,10,21,7,25],
-      borderColor: 'rgba(255, 0, 0, 0.3)',
-      backgroundColor: 'rgba(255, 0, 0, 0.2)',
-      fill: false,
-      tension: 0.2
-    }]
-    };
+    // Recupere o valor do atributo de dados do elemento HTML
+    var balance = document.getElementById('balanceGrafico').getAttribute('data-balance');
 
-   const config = {
-    type: 'line',
-    data: data,
-    };
+    // Converta o valor para o tipo de dado necessário pelo Chart.js
+    var balanceValue = parseFloat(balance);
 
-    var myChart = new Chart(
-        document.getElementById('balanceMonths'),
-        config
-    );
-
-    // divisão graficos //
-    const labelsCategory = ['TV / Internet / Telefone ', 'Moradia', 'Supermercado', 'Bares e restaurantes / Delivery', 'Lazer', 'Transporte', 'Saúde e beleza', 'Contas Fixas'];
-    const dataCategory = {
-    labels: labelsCategory,
-    datasets: [{
-        label: 'Gastos por Categorias',
-        data: JSON.parse('<?php $categories ?>'),
-        backgroundColor: [
-        'rgb(30,144,255)',
-        'rgb(220,20,60)',
-        'rgb(128,0,128)',
-        'rgb(255,140,0)',
-        'rgb(0,128,128)',
-        'rgb(34,139,34)',
-        'rgb(139,69,19)',
-        'rgb(255,255,0)',
-        ],
-        hoverOffset: 4
-    }]
-    };
-
-    const configCategory = {
-    type: 'bars',
-    data: dataCategory,
-    };
-
-    var myChart = new Chart(
-        document.getElementById('categoryResume'),
-        configCategory 
-    );
+    // Crie o gráfico com os dados
+    var ctx = document.getElementById('balanceGrafico').getContext('2d');
+    var balanceGrafico = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Balance'],
+            datasets: [{
+                label: 'Saldo',
+                data: [balanceValue],
+                backgroundColor: 'rgba(0, 192, 80, 0.3)',
+                borderColor: 'rgba(0, 192, 80, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            // Opções do gráfico
+        }
+    });
 </script>
 </body>
 </html>
