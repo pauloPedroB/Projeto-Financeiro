@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Red Hat Display', sans-serif;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 5px;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    margin-bottom: 4%;
+}
+header img{
+    width: 10%; 
+    height: auto;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2%;
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+article{
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    margin: 1% 1% 0 1%;
+    padding: 1%;
+    border-radius: 12px;
+}
+h2{
+    background-color: black;
+    color: white;
+    border-radius: 12px 12px 0px 0px;
+    padding: 5%;
+    width: auto;
+    height: 50%;
+    text-align: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    width: 200px;
+    height: 300px;
+    margin: 2%;
+    padding-bottom: 2%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+}
+.transf{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.transf form{
+    margin-bottom:2%;
+    padding: 1%;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.transf h2{
+    padding: 1%;
+    width: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+label{
+    font-weight: 700;
+}
+input{
+    padding: 3%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+
+}
+.transf input{
+    padding: 1%;
+}
+.btn{
+    width: auto;
+    font-size: 2vh;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 18px;
+    background-color: black;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}

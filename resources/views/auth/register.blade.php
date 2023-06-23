@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <img style="margin-left:40%; margin-right: 50%; width: 20%; height: 20%;" src="/images/FineX - Name.png" alt="FineX - Logo">
+            <img style="margin-left:40%; margin-right: 50%; width: 20%; height: 20%;" src="/images/ctrol - black - text.png" alt="Ctrol - Logo">
         </x-slot>
 
         <x-validation-errors class="mb-4" />
